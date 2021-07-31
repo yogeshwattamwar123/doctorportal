@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+        <strong class="card-title">Patients List</strong>
+        <a class="btn btn-outline-primary pull-right" routerLink="/add-new-patents">Add New Patients </a>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                  <th scope="col">S.no</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Preferred Name</th>
+                  <th scope="col">Phone</th>
+                  <th scope="col">Action</th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let patients of patientslist[0]; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{patients.firstname}}</td>
+                <td>{{patients.preferredname}}</td>
+                <td>{{patients.phonenumber}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deletepatients(i)"><i class="fa fa-trash"></i></button> &nbsp;
+                    <button class="btn btn-danger" [routerLink]="['/View-patents-details', i]"><i class="fa fa-eye"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

@@ -1,0 +1,79 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>Add New Patients</strong>
+            </div>
+            <form [formGroup]="addcedoveninfoform" (ngSubmit)="doCedovenInfoSubmit()" class="form-horizontal">
+                <div class="card-body card-block">
+                    <div class="row">
+                        <div class="col col-md-4 form-group">
+                            <label for="text-input" class=" form-control-label">First Name</label>
+                            <input type="text" class="form-control" formControlName="firstname">
+                            <div *ngIf="!addcedoveninfoform.controls['firstname'].valid && addcedoveninfoform.controls['firstname'].touched" class="alert alert-danger">
+                                <div>
+                                    Enter firstname value.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4 form-group">
+                            <label for="text-input" class=" form-control-label">Last Name</label>
+                            <input type="text" class="form-control" formControlName="lastname">
+                            <div *ngIf="!addcedoveninfoform.controls['lastname'].valid && addcedoveninfoform.controls['lastname'].touched" class="alert alert-danger">
+                                <div>
+                                    Enter lastname Value.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4 form-group">
+                            <label for="text-input" class=" form-control-label">Preferred Name</label>
+                            <input type="text" class="form-control" formControlName="preferredname">
+                            <div *ngIf="!addcedoveninfoform.controls['preferredname'].valid && addcedoveninfoform.controls['preferredname'].touched" class="alert alert-danger">
+                                <div>
+                                    Enter preferredname Value.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-md-4 form-group">
+                            <label for="text-input" class=" form-control-label">Phone Number</label>
+                            <input type="text" class="form-control" formControlName="phonenumber">
+                            <div *ngIf="!addcedoveninfoform.controls['phonenumber'].valid && addcedoveninfoform.controls['phonenumber'].touched" class="alert alert-danger">
+                                <div>
+                                    Enter phonenumber value.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4 form-group">
+                            <label for="text-input" class=" form-control-label">Language</label>
+                            <input type="text" class="form-control" formControlName="language">
+                            <div *ngIf="!addcedoveninfoform.controls['language'].valid && addcedoveninfoform.controls['language'].touched" class="alert alert-danger">
+                                <div>
+                                    Enter language value.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-md-4 form-group">
+                            <label for="text-input" class=" form-control-label">City</label>
+                            <input type="text" class="form-control" formControlName="city">
+                            <div *ngIf="!addcedoveninfoform.controls['city'].valid && addcedoveninfoform.controls['city'].touched" class="alert alert-danger">
+                                <div>
+                                    Enter city value.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-right">
+                    <button type="submit" class="btn btn-primary btn-sm" [disabled]="addcedoveninfoform.invalid">
+                        <i class="fa fa-dot-circle-o"></i> Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

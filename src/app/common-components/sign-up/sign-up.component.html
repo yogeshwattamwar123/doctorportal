@@ -1,0 +1,53 @@
+<div class="sufee-login d-flex align-content-center flex-wrap">
+    <div class="container">
+        <div class="login-content">
+            <div class="login-logo">
+                
+            </div>
+            <div class="login-form">
+                <form class="form-horizontal auth-blk" [formGroup]="signupform" novalidate (submit)="Register(signupform.value)">
+                    <div class="form-group">
+                        <span>Email address</span>
+                        <input class="form-control" type="email" placeholder="E-mail" formControlName="email" ngModel name="email">
+                        <label *ngIf="signupform.controls['email'].invalid && signupform.controls['email'].touched" class="errors">
+                            <div *ngIf="signupform.controls['email'].errors.required">
+                                Please Enter Email
+                            </div>
+                            <div *ngIf="signupform.controls['email'].errors.pattern">
+                                Please enter a valid email
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <span>Password</span>
+                        <input class="form-control" type="password" formControlName="password" ngModel name="password">
+                        <label *ngIf="signupform.controls['password'].invalid && signupform.controls['password'].touched" class="errors">
+                            <div *ngIf="signupform.controls['password'].errors.required">
+                                New Password required.
+                            </div>
+                            <div *ngIf="signupform.controls['password'].errors.pattern">
+                                password must contain one uppercase, one lowercase, and one number
+                            </div>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <span>Confirm Password</span>
+                        <input class="form-control" type="password" formControlName="password_confirmation">
+                        <label *ngIf="signupform.controls['password_confirmation'].invalid && signupform.controls['password_confirmation'].touched" class="errors">
+                            <div *ngIf="signupform.controls['password_confirmation'].errors.required">
+                                Confirm Password required.
+                            </div>
+                            <div *ngIf="signupform.controls['password_confirmation'].errors.pattern">
+                                password must contain one uppercase, one lowercase, and one number
+                            </div>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-flat m-b-30 mt-3" [disabled]="signupform.pristine || signupform.invalid">Sign Up</button>
+                    <div class="register-link mt-3 text-center">
+                        <p>Back To <a routerLink="/login"> Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
